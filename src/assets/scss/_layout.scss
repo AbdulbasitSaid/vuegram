@@ -39,7 +39,13 @@ header {
 
 // login
 #login {
-  background: linear-gradient(to right, $primary 0%, $primary 50%, $white 50%, $white 100%);
+  background: linear-gradient(
+    to right,
+    $primary 0%,
+    $primary 50%,
+    $white 50%,
+    $white 100%
+  );
 
   @media screen and (max-width: 742px) {
     height: 100vh;
@@ -183,8 +189,6 @@ header {
   .profile {
     background: $white;
     padding: 2rem;
-
-    h5 {}
 
     p {
       color: $medium;

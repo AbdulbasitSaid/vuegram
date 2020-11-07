@@ -10,15 +10,25 @@
         </p>
       </div>
       <div class="col2">
-        <form>
+        <form @submit.prevent>
           <h1>Welcome Back</h1>
           <div>
             <label for="email1">Email</label>
-            <input type="text" placeholder="you@email.com" id="email1" />
+            <input
+              v-model.trim="loginForm.email"
+              type="text"
+              placeholder="you@email.com"
+              id="email1"
+            />
           </div>
           <div>
             <label for="password1">Password</label>
-            <input type="password" placeholder="******" id="password1" />
+            <input
+              v-model.trim="loginForm.password"
+              type="password"
+              placeholder="******"
+              id="password1"
+            />
           </div>
           <button class="button">Log In</button>
           <div class="extras">
@@ -32,7 +42,16 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      loginForm: {
+        email: "",
+        password: "",
+      },
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
