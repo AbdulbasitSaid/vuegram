@@ -4,6 +4,7 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import { auth } from '../src/util/firebase'
+import './assets/scss/app.scss'
 Vue.config.productionTip = false
 
 new Vue({
