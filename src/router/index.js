@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Dashboard from '../views/Dashboard.vue'
+import { auth } from '../util/firebase'
 
 Vue.use(VueRouter)
 
@@ -8,7 +9,10 @@ const routes = [
   {
     path: '/',
     name: 'Dashboard',
-    component: Dashboard
+    component: Dashboard,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/login',
@@ -24,7 +28,10 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (settings.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "settingss" */ '../views/Settings.vue')
+    component: () => import(/* webpackChunkName: "settingss" */ '../views/Settings.vue'),
+    meta: {
+      requiresAuth: true
+    }
   },
 ]
 
