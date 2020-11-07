@@ -30,7 +30,7 @@
               id="password1"
             />
           </div>
-          <button class="button">Log In</button>
+          <button @click="login()" class="button">Log In</button>
           <div class="extras">
             <a>Forgot Password</a>
             <a>Create an Account</a>
@@ -43,6 +43,14 @@
 
 <script>
 export default {
+  methods: {
+    login() {
+      this.$store.dispatch("login", {
+        email: this.loginForm.email,
+        password: this.loginForm.password,
+      });
+    },
+  },
   data() {
     return {
       loginForm: {
